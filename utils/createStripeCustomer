@@ -1,0 +1,22 @@
+require("dotenv").config();
+const stripe = require("stripe")(
+  "sk_test_51L2tU3GMNEcDYYZgH5qcJLdgNlj3jpCbkxtBJlK5BqNVMnAJPa8HZhCetw695nRNf7KbkOueY4u3IQqbCwA9YMSK00T7yeiHTF"
+);
+
+async function createStripeCustomer({ fullName, email }) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const Customer = await stripe.customers.create({
+        name: fullName,
+        email: email,
+      });
+
+      console.log("the customer >>> ", Customer);
+    } catch (err) {
+      console.log("customer error", err);
+      reject(err);
+    }
+  });
+}
+
+module.exports = createStripeCustomer;
