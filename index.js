@@ -14,7 +14,7 @@ dotenv.config();
 
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://shimmering-jalebi-463d6d.netlify.app"]
+  origin: ["http://localhost:3000", "https://makadsaapi.onrender.com"]
 }));
 
 app.use(express.json());
