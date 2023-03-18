@@ -27,7 +27,7 @@ router.post("/forgot-password", async (req, res) => {
 
     console.log("the token>>>>>>>>", token);
 
-    const link = `http://localhost:3000/reset-password/?id=${user._id}&token=${token}`;
+    const link = `https://shimmering-jalebi-463d6d.netlify.app/reset-password/?id=${user._id}&token=${token}`;
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
