@@ -9,7 +9,7 @@ const corsOpts = {
   exposedHeaders: ['Content-Type']
 };
 const dotenv = require("dotenv");
-
+const path = require("path")
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
