@@ -19,11 +19,10 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 
-
 app.use(cors(corsOpts));
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')))
+ 
 
 
 const url = process.env.MONGODB_URI
@@ -40,16 +39,12 @@ mongoose
 
 
 
-
 app.use('/', require('./routes/root'))
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/stripe", stripeRoute);
 app.use("/api/orders", orderRoute);
-
-
-
 
 
 app.listen(process.env.PORT || 5000, () => {
