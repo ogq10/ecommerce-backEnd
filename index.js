@@ -17,7 +17,11 @@ app.use(cors());
 
 app.use(express.json());
 
-
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://shimmering-jalebi-463d6d.netlify.app/"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 const url = process.env.MONGODB_URI
 mongoose
