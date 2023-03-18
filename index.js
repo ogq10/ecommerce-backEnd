@@ -13,9 +13,7 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 
-app.use(cors({
-  origin: ["http://localhost:3000", "https://makadsaapi.onrender.com", "https://main--shimmering-jalebi-463d6d.netlify.app/", "https://shimmering-jalebi-463d6d.netlify.app/"]
-}));
+app.use(cors());
 
 app.use(express.json());
 
