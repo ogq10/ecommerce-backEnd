@@ -1,13 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const corsOpts = {
-  origin: '*',
-  credentials: true,
-  methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
-  exposedHeaders: ['Content-Type']
-};
+
 const dotenv = require("dotenv");
 const path = require("path")
 const userRoute = require("./routes/user");
@@ -19,10 +13,12 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 
-app.use(cors(corsOpts));
+app.use(cors({
+  origin: ["http://localhost:3000", "https://shimmering-jalebi-463d6d.netlify.app"]
+}));
 
 app.use(express.json());
- 
+
 
 
 const url = process.env.MONGODB_URI
