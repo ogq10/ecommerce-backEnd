@@ -23,6 +23,7 @@ dotenv.config();
 app.use(cors(corsOpts));
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 const url = process.env.MONGODB_URI
